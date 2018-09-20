@@ -15,12 +15,26 @@ int main(){
     printf("The number at %p is %d \n", ap, * ap);
     ap++;
   }
+  
   ap--;
   * ap = 0;
 
+  int neway[10];
+  int * newap = neway;
+  
   while(ap >= ay){
-    printf("array[%d] = %d \n",  ap -  ay, *ap);
+    printf("array[%d] = %d \n", (int) ( ap -  ay), *ap);
+    * newap = * ap;
+    newap++;
     ap--;
+  }
+  
+  ap++;
+  newap--;
+
+  while(newap >= neway){
+    printf("array2[%d] = %d \n", (int) ( newap - neway), * newap);
+    newap--;
   }
   
   return 0;
